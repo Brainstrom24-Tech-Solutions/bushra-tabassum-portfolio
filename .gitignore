@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.next-production/
+out/
+.sites-runtime/
+*.tsbuildinfo
+.env*
+.next-dev/
+.next-preview/
+
+.vercel

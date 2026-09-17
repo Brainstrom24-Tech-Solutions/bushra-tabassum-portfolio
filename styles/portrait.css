@@ -1,0 +1,6 @@
+.portrait { margin: 38px 0 0; }
+.portrait-frame { aspect-ratio: 4 / 5; overflow: hidden; background: #ddd8ce; }
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+.portrait figcaption { display: flex; justify-content: space-between; gap: 18px; padding-top: 18px; font-size: 13px; }
+.portrait figcaption span:last-child { color: var(--muted); }
+@media (max-width: 760px) { .portrait { margin-top: 26px; } .portrait-frame { max-height: 580px; } }

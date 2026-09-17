@@ -1,0 +1,2 @@
+/* Lenis owns animation; native smooth scrolling would compete with it. */
+html.lenis { scroll-behavior: auto !important; }
