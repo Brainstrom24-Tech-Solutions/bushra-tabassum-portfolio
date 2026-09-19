@@ -1,5 +1,13 @@
 export const linkedin =
   "https://www.linkedin.com/in/bushra-tabassum-b7bb041b6/";
+export const contact = {
+  email: "bushratabas.summ11@gmail.com",
+  phones: [
+    { country: "Bangladesh", label: "+880 1741 300461", href: "tel:+8801741300461" },
+    { country: "Malaysia", label: "+60 11 1666 7319", href: "tel:+601116667319" },
+  ],
+  address: ["Star Center, Level 2", "Gulshan 1, Dhaka 1212", "Bangladesh"],
+};
 export const projects = [
   {
     slug: "principles-and-materiality",
@@ -74,7 +82,7 @@ export const experience = [
     dates: "Jan 2024 — Present",
     location: "Dhaka, Bangladesh · Hybrid",
     description:
-      "Project coordination, on-site supervision, project activity reporting and client status presentations.",
+      "Oversight of sales, marketing and development teams, alongside project coordination, on-site supervision and client communication.",
   },
   {
     role: "Assistant Architect",
@@ -82,7 +90,7 @@ export const experience = [
     dates: "Sep 2023 — Feb 2024",
     location: "Dhaka, Bangladesh · On-site",
     description:
-      "Architectural practice with skills spanning drafting, 3D modelling and visualisation.",
+      "Site visits and analysis, design development, 3D modelling and rendering for architectural projects.",
   },
   {
     role: "Architectural Intern",

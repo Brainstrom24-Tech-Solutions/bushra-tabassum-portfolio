@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Layout, { Arrow } from "../../components/Layout";
 import { projects } from "../../data/profile";
-import { featuredProjects, type FeaturedProject } from "../../data/featured";
+import { caseStudies, type FeaturedProject } from "../../data/featured";
 import FeaturedCaseStudy from "../../components/FeaturedCaseStudy";
 type Project = (typeof projects)[number];
 type ProjectPageProps = { featured: true; project: FeaturedProject; next: FeaturedProject } | { featured: false; project: Project; next: Project };
@@ -94,12 +94,12 @@ function ArchiveProjectPage({
   );
 }
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: [...featuredProjects, ...projects].map((p) => ({ params: { slug: p.slug } })),
+  paths: [...caseStudies, ...projects].map((p) => ({ params: { slug: p.slug } })),
   fallback: false,
 });
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const featuredIndex = featuredProjects.findIndex((p) => p.slug === params?.slug);
-  if (featuredIndex >= 0) return { props: { featured: true, project: featuredProjects[featuredIndex], next: featuredProjects[(featuredIndex + 1) % featuredProjects.length] } };
+  const featuredIndex = caseStudies.findIndex((p) => p.slug === params?.slug);
+  if (featuredIndex >= 0) return { props: { featured: true, project: caseStudies[featuredIndex], next: caseStudies[(featuredIndex + 1) % caseStudies.length] } };
   const index = projects.findIndex((p) => p.slug === params?.slug);
   if (index < 0) return { notFound: true };
   return {

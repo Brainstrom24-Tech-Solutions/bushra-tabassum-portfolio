@@ -4,6 +4,7 @@ import "lenis/dist/lenis.css";
 import "../styles/globals.css";
 import "../styles/portrait.css";
 import "../styles/scroll.css";
+import "../styles/gallery.css";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>

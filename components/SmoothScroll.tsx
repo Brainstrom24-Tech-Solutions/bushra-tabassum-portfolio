@@ -14,6 +14,7 @@ export default function SmoothScroll() {
       respectReducedMotion: true,
     });
     let resizeFrame = 0;
+    let anchorFrame = 0;
 
     // Own same-page anchors before Next.js or the browser jumps to the target.
     // Do not stop propagation: mobile-menu close handlers must still run.
@@ -61,6 +62,10 @@ export default function SmoothScroll() {
         shallow: true,
         scroll: false,
       });
+      // Measure after the mobile navigation closes and changes the page height.
+      cancelAnimationFrame(anchorFrame);
+      anchorFrame = requestAnimationFrame(() => {
+      lenis.resize();
       lenis.scrollTo(target, {
         // Lenis includes the document's responsive scroll-padding-top.
         offset: 0,
@@ -76,6 +81,7 @@ export default function SmoothScroll() {
           }
           target.focus({ preventScroll: true });
         },
+      });
       });
     };
 
@@ -100,6 +106,7 @@ export default function SmoothScroll() {
       router.events.off("routeChangeComplete", syncRoute);
       router.events.off("routeChangeError", syncRoute);
       cancelAnimationFrame(resizeFrame);
+      cancelAnimationFrame(anchorFrame);
       lenis.destroy();
     };
   }, []);

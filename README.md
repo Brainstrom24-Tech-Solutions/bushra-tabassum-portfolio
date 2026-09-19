@@ -1,6 +1,6 @@
 # Bushra Tabassum — Architecture Portfolio
 
-An editorial, responsive portfolio built with **Next.js Pages Router**, TypeScript and Tailwind CSS. Includes a redesigned homepage, three original academic case studies, four earlier study pages and a custom 404. The visual system combines oversized serif typography, charcoal sections, copper accents and responsive layouts.
+An editorial, responsive portfolio built with **Next.js Pages Router**, TypeScript and Tailwind CSS. Includes a redesigned homepage, three selected projects, a sustainability concept, four earlier study pages and a custom 404. The visual system combines oversized serif typography, charcoal sections, copper accents and responsive layouts.
 
 ## Run locally
 
@@ -15,21 +15,26 @@ Open http://localhost:3000. For a production static export, run `npm run build`;
 
 ## Update content
 
-- `data/profile.ts`: projects, experience, skills and LinkedIn URL.
-- `data/featured.ts`: the three featured projects, attribution, source links and presentation boards.
-- `components/FeaturedCaseStudy.tsx`: original case-study pages and PDF downloads.
+- `data/profile.ts`: earlier studies, experience, skills and contact details.
+- `data/featured.ts`: selected projects, sustainability concept, attribution and gallery captions.
+- `data/gallery-assets.json`: source artwork dimensions.
+- `components/FeaturedCaseStudy.tsx`: case-study pages and available PDF downloads.
+- `components/ProjectGallery.tsx`: category filters and a keyboard-accessible image viewer with zoom, previous/next and focus restoration.
+- `styles/gallery.css`: gallery, image viewer, concept feature and contact layouts.
 - `pages/index.tsx`: homepage introduction, education and contact text.
 - `styles/globals.css`: visual design and responsive styles; Tailwind utilities are also enabled.
 - `styles/portrait.css`: responsive About-section portrait framing.
 - `components/SmoothScroll.tsx`: Lenis scrolling, section links, route synchronisation and cleanup. Reduced-motion preferences are respected; touch scrolling stays native.
 - `public/images/bushra-tabassum.png`: the original portrait supplied by the user.
-- `public/images/projects/`: cover excerpts and full boards rendered from the original Wix portfolio PDFs.
-- `public/documents/`: compact, rasterised web editions of the three original presentation PDFs; all pages and visual team credits are retained.
+- `public/images/projects/`: original Canva project artwork and crops rendered from Wix portfolio PDFs, with lightweight gallery thumbnails.
+- `public/documents/`: compact, rasterised web editions of the two original presentation PDFs; all pages and visual team credits are retained.
 - Other files in `public/images/`: editorial architecture references used only by the earlier study archive.
 
 ## Content notes
 
-Career information comes from the supplied LinkedIn text. Featured academic projects are sourced from the supplied Wix portfolio: The Esplanade, Kepong Meditation Garden and Echoes of the Wind. Group attribution is preserved. Earlier studies retain their illustrative-image labels. No project completion dates, commissioned clients, awards or measured performance claims have been invented. LinkedIn is the functional contact channel.
+Selected work is ordered Maharaja Restaurant, The Esplanade, and Echoes of the Wind. Maharaja artwork and project facts come from the supplied Canva portfolio, page 12. Its images are labelled as design visualisations; no current construction status or completion date is claimed. The WAT-AIR Purifier study from Canva page 15 is labelled as a speculative academic concept without engineering performance claims. Esplanade and Echoes drawings come from the original supplied Wix PDFs. Group attribution is preserved. Earlier studies retain their illustrative-image labels.
+
+Biography and responsibilities incorporate the supplied Canva CV. Contact details come from its page 16 and use functional email and telephone links; LinkedIn remains available. The user will confirm three discrepancies with the portfolio owner: Anondo Cityscapers Ltd versus Anondo Housing Society, HMS Architects versus MH Architects, and BSc Architecture (July 2023) versus Bachelor of Architecture (January 2024). Existing company names, degree title and dates remain unchanged pending that confirmation.
 
 Development uses `.next-dev` to avoid collisions with production exports. For another simultaneous local preview, set `NEXT_DEV_DIRECTORY` to a separate cache path. The production export remains `out/`.
 

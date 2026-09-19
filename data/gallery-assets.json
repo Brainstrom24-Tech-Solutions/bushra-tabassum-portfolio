@@ -1,0 +1,110 @@
+{
+  "maharaja-cover": {
+    "width": 2399,
+    "height": 1425
+  },
+  "maharaja-dining": {
+    "width": 1599,
+    "height": 1261
+  },
+  "maharaja-plan": {
+    "width": 1599,
+    "height": 1493
+  },
+  "maharaja-section": {
+    "width": 990,
+    "height": 335
+  },
+  "maharaja-window": {
+    "width": 1600,
+    "height": 1084
+  },
+  "wat-air-board": {
+    "width": 906,
+    "height": 624
+  },
+  "esplanade-process": {
+    "width": 2400,
+    "height": 1346
+  },
+  "esplanade-site": {
+    "width": 2200,
+    "height": 1766
+  },
+  "esplanade-concept": {
+    "width": 1200,
+    "height": 1562
+  },
+  "esplanade-ground": {
+    "width": 2400,
+    "height": 1727
+  },
+  "esplanade-level-1": {
+    "width": 2400,
+    "height": 1656
+  },
+  "esplanade-level-2": {
+    "width": 2400,
+    "height": 1704
+  },
+  "esplanade-level-3": {
+    "width": 2400,
+    "height": 1680
+  },
+  "esplanade-level-4": {
+    "width": 2400,
+    "height": 1751
+  },
+  "esplanade-basement": {
+    "width": 2400,
+    "height": 1639
+  },
+  "esplanade-elevations": {
+    "width": 2600,
+    "height": 2000
+  },
+  "esplanade-sections": {
+    "width": 2600,
+    "height": 1666
+  },
+  "esplanade-experiences": {
+    "width": 2800,
+    "height": 1940
+  },
+  "esplanade-construction": {
+    "width": 2399,
+    "height": 2683
+  },
+  "esplanade-axon": {
+    "width": 1400,
+    "height": 2969
+  },
+  "echoes-plan": {
+    "width": 1800,
+    "height": 1942
+  },
+  "echoes-design-process": {
+    "width": 1799,
+    "height": 1830
+  },
+  "echoes-elevations": {
+    "width": 2600,
+    "height": 504
+  },
+  "echoes-material-detail": {
+    "width": 1800,
+    "height": 1833
+  },
+  "echoes-axon": {
+    "width": 1599,
+    "height": 2298
+  },
+  "echoes-interaction": {
+    "width": 1399,
+    "height": 1626
+  },
+  "echoes-full-board": {
+    "width": 3600,
+    "height": 2543
+  }
+}
