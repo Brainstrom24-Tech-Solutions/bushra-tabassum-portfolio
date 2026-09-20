@@ -65,23 +65,23 @@ export default function SmoothScroll() {
       // Measure after the mobile navigation closes and changes the page height.
       cancelAnimationFrame(anchorFrame);
       anchorFrame = requestAnimationFrame(() => {
-      lenis.resize();
-      lenis.scrollTo(target, {
-        // Lenis includes the document's responsive scroll-padding-top.
-        offset: 0,
-        onComplete: () => {
-          // Keep keyboard navigation aligned with the destination section.
-          if (!target.hasAttribute("tabindex")) {
-            target.setAttribute("tabindex", "-1");
-            target.addEventListener(
-              "blur",
-              () => target.removeAttribute("tabindex"),
-              { once: true },
-            );
-          }
-          target.focus({ preventScroll: true });
-        },
-      });
+        lenis.resize();
+        lenis.scrollTo(target, {
+          // Lenis includes the document's responsive scroll-padding-top.
+          offset: 0,
+          onComplete: () => {
+            // Keep keyboard navigation aligned with the destination section.
+            if (!target.hasAttribute("tabindex")) {
+              target.setAttribute("tabindex", "-1");
+              target.addEventListener(
+                "blur",
+                () => target.removeAttribute("tabindex"),
+                { once: true },
+              );
+            }
+            target.focus({ preventScroll: true });
+          },
+        });
       });
     };
 

@@ -4,13 +4,136 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { ArrowUpRight, ArrowUp, Menu, X } from "lucide-react";
 import { linkedin } from "../data/profile";
-export function Arrow({ className = "" }: { className?: string }) { return <ArrowUpRight size={19} strokeWidth={1.4} className={className} aria-hidden="true" />; }
-const navigation = [["Work", "work"], ["About", "about"], ["Experience", "experience"], ["Expertise", "expertise"]];
-export default function Layout({ children, title = "Bushra Tabassum — Architect & Director", description = "Architecture, design and leadership. Selected projects and the professional journey of Bushra Tabassum, Director at Anondo Housing Society." }: { children: React.ReactNode; title?: string; description?: string }) {
+export function Arrow({ className = "" }: { className?: string }) {
+  return (
+    <ArrowUpRight
+      size={19}
+      strokeWidth={1.4}
+      className={className}
+      aria-hidden="true"
+    />
+  );
+}
+const navigation = [
+  ["Work", "work"],
+  ["About", "about"],
+  ["Experience", "experience"],
+  ["Expertise", "expertise"],
+];
+export default function Layout({
+  children,
+  title = "Bushra Tabassum — Architect & Director",
+  description = "Architecture, design and leadership. Selected projects and the professional journey of Bushra Tabassum, Director at Anondo Housing Society.",
+}: {
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+}) {
   const [menu, setMenu] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const router = useRouter();
-  useEffect(() => { setMenu(false); }, [router.asPath]);
-  useEffect(() => { if (!menu) return; const key = (event: KeyboardEvent) => { if (event.key === "Escape") { setMenu(false); toggleRef.current?.focus(); } }; window.addEventListener("keydown", key); return () => window.removeEventListener("keydown", key); }, [menu]);
-  return <><Head><title>{title}</title><meta name="description" content={description} /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" /></Head><a className="skip-link" href="#main">Skip to content</a><header className="header-wrap"><div className="site-header shell"><Link href="/" className="brand" aria-label="Bushra Tabassum home"><span className="monogram">bt<span>.</span></span><span className="brand-name">Bushra Tabassum<span>Architect & Director</span></span></Link><nav aria-label="Main navigation" className="desktop-nav">{navigation.map(([name, id]) => <Link key={id} href={`/#${id}`}>{name}</Link>)}<Link href="/#contact" className="nav-contact">Let’s talk <Arrow /></Link></nav><button ref={toggleRef} className="mobile-toggle" onClick={() => setMenu(!menu)} aria-expanded={menu} aria-controls="mobile-navigation" aria-label={menu ? "Close navigation" : "Open navigation"}>{menu ? <X /> : <Menu />}</button></div>{menu && <nav id="mobile-navigation" className="mobile-nav shell" aria-label="Mobile navigation">{[...navigation, ["Let’s talk", "contact"]].map(([name, id], index) => <Link key={id} href={`/#${id}`} onClick={() => setMenu(false)}><span><small>0{index + 1}</small>{name}</span><Arrow /></Link>)}</nav>}</header><main id="main">{children}</main><footer className="footer"><div className="shell"><div className="footer-top"><Link href="/" className="footer-name">Bushra Tabassum<span>Architecture. Design. Leadership.</span></Link><div className="footer-location">Kuala Lumpur, Malaysia<br />Dhaka, Bangladesh</div><a href={linkedin} target="_blank" rel="noreferrer">LinkedIn <Arrow /></a><a href="#main" className="back-top" aria-label="Back to top"><ArrowUp size={20} /></a></div><div className="footer-bottom"><p>© {new Date().getFullYear()} Bushra Tabassum</p><p>Thoughtful spaces. Lasting connections.</p></div></div></footer></>;
+  useEffect(() => {
+    setMenu(false);
+  }, [router.asPath]);
+  useEffect(() => {
+    if (!menu) return;
+    const key = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenu(false);
+        toggleRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", key);
+    return () => window.removeEventListener("keydown", key);
+  }, [menu]);
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+      </Head>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <header className="header-wrap">
+        <div className="site-header shell">
+          <Link href="/" className="brand" aria-label="Bushra Tabassum home">
+            <span className="monogram">
+              bt<span>.</span>
+            </span>
+            <span className="brand-name">
+              Bushra Tabassum<span>Architect & Director</span>
+            </span>
+          </Link>
+          <nav aria-label="Main navigation" className="desktop-nav">
+            {navigation.map(([name, id]) => (
+              <Link key={id} href={`/#${id}`}>
+                {name}
+              </Link>
+            ))}
+            <Link href="/#contact" className="nav-contact">
+              Let’s talk <Arrow />
+            </Link>
+          </nav>
+          <button
+            ref={toggleRef}
+            className="mobile-toggle"
+            onClick={() => setMenu(!menu)}
+            aria-expanded={menu}
+            aria-controls="mobile-navigation"
+            aria-label={menu ? "Close navigation" : "Open navigation"}
+          >
+            {menu ? <X /> : <Menu />}
+          </button>
+        </div>
+        {menu && (
+          <nav
+            id="mobile-navigation"
+            className="mobile-nav shell"
+            aria-label="Mobile navigation"
+          >
+            {[...navigation, ["Let’s talk", "contact"]].map(
+              ([name, id], index) => (
+                <Link key={id} href={`/#${id}`} onClick={() => setMenu(false)}>
+                  <span>
+                    <small>0{index + 1}</small>
+                    {name}
+                  </span>
+                  <Arrow />
+                </Link>
+              ),
+            )}
+          </nav>
+        )}
+      </header>
+      <main id="main">{children}</main>
+      <footer className="footer">
+        <div className="shell">
+          <div className="footer-top">
+            <Link href="/" className="footer-name">
+              Bushra Tabassum<span>Architecture. Design. Leadership.</span>
+            </Link>
+            <div className="footer-location">
+              Kuala Lumpur, Malaysia
+              <br />
+              Dhaka, Bangladesh
+            </div>
+            <a href={linkedin} target="_blank" rel="noreferrer">
+              LinkedIn <Arrow />
+            </a>
+            <a href="#main" className="back-top" aria-label="Back to top">
+              <ArrowUp size={20} />
+            </a>
+          </div>
+          <div className="footer-bottom">
+            <p>© {new Date().getFullYear()} Bushra Tabassum</p>
+            <p>Thoughtful spaces. Lasting connections.</p>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 }

@@ -85,6 +85,14 @@ export const experience = [
       "Oversight of sales, marketing and development teams, alongside project coordination, on-site supervision and client communication.",
   },
   {
+    role: "Director",
+    company: "Anondo Cityscapers Ltd",
+    dates: "January 2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Supervising the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
+  },
+  {
     role: "Assistant Architect",
     company: "MH Architects",
     dates: "Sep 2023 — Feb 2024",

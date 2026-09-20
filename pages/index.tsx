@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Plus } from "lucide-react";
 import Layout, { Arrow } from "../components/Layout";
-import { contact, experience, linkedin, projects, skillGroups } from "../data/profile";
+import {
+  contact,
+  experience,
+  linkedin,
+  projects,
+  skillGroups,
+} from "../data/profile";
 import { featuredProjects, sustainabilityProject } from "../data/featured";
 
 export default function Home() {
@@ -9,16 +15,388 @@ export default function Home() {
   return (
     <Layout>
       <section className="hero shell">
-        <div className="hero-kicker"><p className="eyebrow">Architecture · Design · Leadership</p><span className="eyebrow">Kuala Lumpur / Dhaka</span></div>
-        <div className="hero-heading"><h1>Spaces for life.<br /><em>Design with feeling.</em></h1><div className="hero-intro"><p>I’m Bushra Tabassum.<br />Architect & Director at<br />Anondo Housing Society.</p><a href="#work" className="text-link">Discover my work <ArrowDown size={17} /></a></div></div>
-        <Link href={`/projects/${heroProject.slug}`} className="hero-project" aria-label={`Explore ${heroProject.title}`}><img src={heroProject.image} alt={heroProject.alt} fetchPriority="high" width={2399} height={1425} /><div className="hero-project-shade" /><div className="hero-project-caption"><span className="eyebrow">Featured project / Hospitality interiors</span><h2>{heroProject.title}</h2><p>Warmth, texture & a place at the table.</p></div><span className="circle-arrow"><ArrowUpRight size={30} strokeWidth={1} /></span><span className="hero-project-type">Genting Highlands · 2,200 sq ft</span></Link>
-        <div className="hero-bottom"><span>People. Place. Possibility.</span><a href="#about">Meet the architect <ArrowDown size={15} /></a><span>Portfolio / 2026</span></div>
+        <div className="hero-kicker">
+          <p className="eyebrow">Architecture · Design · Leadership</p>
+          <span className="eyebrow">Kuala Lumpur / Dhaka</span>
+        </div>
+        <div className="hero-heading">
+          <h1>
+            Spaces for life.
+            <br />
+            <em>Design with feeling.</em>
+          </h1>
+          <div className="hero-intro">
+            <p>
+              I’m Bushra Tabassum.
+              <br />
+              Architect & Director at
+              <br />
+              Anondo Housing Society.
+            </p>
+            <a href="#work" className="text-link">
+              Discover my work <ArrowDown size={17} />
+            </a>
+          </div>
+        </div>
+        <Link
+          href={`/projects/${heroProject.slug}`}
+          className="hero-project"
+          aria-label={`Explore ${heroProject.title}`}
+        >
+          <img
+            src={heroProject.image}
+            alt={heroProject.alt}
+            fetchPriority="high"
+            width={2399}
+            height={1425}
+          />
+          <div className="hero-project-shade" />
+          <div className="hero-project-caption">
+            <span className="eyebrow">
+              Featured project / Hospitality interiors
+            </span>
+            <h2>{heroProject.title}</h2>
+            <p>Warmth, texture & a place at the table.</p>
+          </div>
+          <span className="circle-arrow">
+            <ArrowUpRight size={30} strokeWidth={1} />
+          </span>
+          <span className="hero-project-type">
+            Genting Highlands · 2,200 sq ft
+          </span>
+        </Link>
+        <div className="hero-bottom">
+          <span>People. Place. Possibility.</span>
+          <a href="#about">
+            Meet the architect <ArrowDown size={15} />
+          </a>
+          <span>Portfolio / 2026</span>
+        </div>
       </section>
-      <section id="work" className="work-section section-space"><div className="shell"><div className="section-heading"><div><p className="eyebrow">01 / Selected work</p><h2>Considered spaces.<br /><em>Human stories.</em></h2></div><p className="section-aside">Professional interiors and academic explorations, connected by a thoughtful approach to people and place.<br /><span>Selected projects / Bangladesh & Malaysia</span></p></div><div className="selected-grid">{featuredProjects.map((project) => <Link href={`/projects/${project.slug}`} className="selected-card selected-feature" key={project.slug}><div className="selected-image"><img src={project.image} alt={project.alt} loading="lazy" width={2000} height={1350} /><span className="project-index">{project.number} / {String(featuredProjects.length).padStart(2, "0")}</span><span className="project-open"><Arrow /></span></div><div className="selected-info"><div className="project-overline"><span>{project.category}</span><span>{project.studio}</span></div><h3>{project.title}</h3><p>{project.intro}</p><span className="project-credit">{project.role}</span><span className="project-read">Explore project <Arrow /></span></div></Link>)}</div><article className="concept-feature"><div><p className="eyebrow">Concept exploration / Sustainable Living</p><h3>{sustainabilityProject.title}</h3><p>An imagined response to the city’s air and water challenges. An academic exploration of environmental systems and urban possibility.</p><Link href={`/projects/${sustainabilityProject.slug}`} className="text-link">Explore the concept <Arrow /></Link></div><Link href={`/projects/${sustainabilityProject.slug}`} className="concept-feature-image" aria-label="Explore WAT-AIR Purifier concept"><img src={sustainabilityProject.image} alt={sustainabilityProject.alt} width={906} height={624} loading="lazy" /></Link></article><details className="study-archive"><summary><span>Earlier explorations <small>04 studies</small></span><Plus size={22} /></summary><div>{projects.map(project => <Link href={`/projects/${project.slug}`} key={project.slug}><span className="archive-number">{project.number}</span><span>{project.title}<small>{project.category}</small></span><Arrow /></Link>)}</div></details></div></section>
-      <section id="about" className="about-section shell section-space"><div className="about-profile"><p className="eyebrow">02 / The person behind the work</p><figure className="portrait"><div className="portrait-frame"><img src="/images/bushra-tabassum.png" alt="Bushra Tabassum" width={1024} height={1536} loading="lazy" /></div><figcaption><span>Bushra Tabassum</span><span>Architect & Director</span></figcaption></figure></div><div className="about-content"><span className="section-mark" aria-hidden="true">BT.</span><h2>A designer’s eye.<br /><em>A director’s perspective.</em></h2><div className="about-body"><p>My work brings architectural thinking and business leadership to the same table. From a restaurant interior to a community space, I’m interested in how light, materials and thoughtful planning shape everyday experiences.</p><p>Practice in Bangladesh and Malaysia has shaped my approach to site analysis, design development and visualisation. In my role as Director at Anondo Housing Society, that perspective extends to team management, sales, marketing and development—connecting creative decisions with the people who bring them to life.</p></div><p className="about-interests"><span>Beyond the drawing board</span>Drawing & digital art · Travel · Photography · Reading & writing</p><div className="about-facts"><div><span>BArch</span><p>Taylor’s University</p></div><div><span>MBA</span><p>University of Cyberjaya</p></div><div><span>BD / MY</span><p>A cross-border perspective</p></div></div></div></section>
-      <section id="experience" className="experience-section section-space"><div className="shell"><div className="section-heading"><div><p className="eyebrow">03 / Experience & education</p><h2>Built on practice.<br /><em>Broadened by perspective.</em></h2></div><p className="section-aside">A journey through architecture,<br />collaboration and leadership.</p></div><div className="experience-list">{experience.map((job, index) => <article className="experience-row" key={job.company}><span className="row-number">0{index + 1}</span><p className="job-date">{job.dates}</p><div><h3>{job.role}</h3><p className="company">{job.company}</p></div><div><p className="job-description">{job.description}</p><p className="job-location">{job.location}</p></div></article>)}</div><div className="education-grid"><p className="eyebrow">Academic foundations</p><article><span>Oct 2024 — Jan 2026</span><h3>Master of Business Administration</h3><p>University of Cyberjaya</p></article><article><span>2019 — Jan 2024</span><h3>Bachelor of Architecture</h3><p>Taylor’s University</p></article></div></div></section>
-      <section id="expertise" className="expertise-section section-space"><div className="shell"><div className="section-heading"><div><p className="eyebrow">04 / Expertise</p><h2>Creative thinking.<br /><em>Practical fluency.</em></h2></div><p className="section-aside">The tools and skills behind<br />a considered approach.</p></div><div className="skill-groups">{skillGroups.map((group, index) => <article className="skill-group" key={group.name}><span className="skill-index">0{index + 1}</span><div><h3>{group.name}</h3><p>{group.detail}</p></div><div className="skill-tags">{group.skills.map(skill => <span key={skill}>{skill}</span>)}</div></article>)}</div></div></section>
-      <section id="contact" className="contact-section section-space"><div className="shell"><p className="eyebrow">05 / Start a conversation</p><div className="contact-heading"><h2>Good spaces start<br />with <em>a conversation.</em></h2><a className="contact-orbit" href={`mailto:${contact.email}`} aria-label="Email Bushra Tabassum"><ArrowUpRight strokeWidth={1} /></a></div><div className="contact-bottom"><p>For professional connections, architecture<br />and opportunities to collaborate.</p><div className="contact-actions"><a className="contact-button" href={`mailto:${contact.email}`}>Send an email <Arrow /></a><a className="text-link" href={linkedin} target="_blank" rel="noreferrer">LinkedIn <Arrow /></a></div></div><div className="contact-details"><div><h3>Email</h3><a href={`mailto:${contact.email}`}>{contact.email} <Arrow /></a></div><div><h3>Phone</h3>{contact.phones.map((phone, index) => <div className={index ? "phone-secondary" : ""} key={phone.country}><a href={phone.href}>{phone.label}</a><small>{phone.country}</small></div>)}</div><div><h3>Office</h3><address>{contact.address.map(line => <span className="block" key={line}>{line}</span>)}</address></div></div></div></section>
+      <section id="work" className="work-section section-space">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">01 / Selected work</p>
+              <h2>
+                Considered spaces.
+                <br />
+                <em>Human stories.</em>
+              </h2>
+            </div>
+            <p className="section-aside">
+              Professional interiors and academic explorations, connected by a
+              thoughtful approach to people and place.
+              <br />
+              <span>Selected projects / Bangladesh & Malaysia</span>
+            </p>
+          </div>
+          <div className="selected-grid">
+            {featuredProjects.map((project) => (
+              <Link
+                href={`/projects/${project.slug}`}
+                className="selected-card selected-feature"
+                key={project.slug}
+              >
+                <div className="selected-image">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    loading="lazy"
+                    width={2000}
+                    height={1350}
+                  />
+                  <span className="project-index">
+                    {project.number} /{" "}
+                    {String(featuredProjects.length).padStart(2, "0")}
+                  </span>
+                  <span className="project-open">
+                    <Arrow />
+                  </span>
+                </div>
+                <div className="selected-info">
+                  <div className="project-overline">
+                    <span>{project.category}</span>
+                    <span>{project.studio}</span>
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p>{project.intro}</p>
+                  <span className="project-credit">{project.role}</span>
+                  <span className="project-read">
+                    Explore project <Arrow />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <article className="concept-feature">
+            <div>
+              <p className="eyebrow">
+                Concept exploration / Sustainable Living
+              </p>
+              <h3>{sustainabilityProject.title}</h3>
+              <p>
+                An imagined response to the city’s air and water challenges. An
+                academic exploration of environmental systems and urban
+                possibility.
+              </p>
+              <Link
+                href={`/projects/${sustainabilityProject.slug}`}
+                className="text-link"
+              >
+                Explore the concept <Arrow />
+              </Link>
+            </div>
+            <Link
+              href={`/projects/${sustainabilityProject.slug}`}
+              className="concept-feature-image"
+              aria-label="Explore WAT-AIR Purifier concept"
+            >
+              <img
+                src={sustainabilityProject.image}
+                alt={sustainabilityProject.alt}
+                width={906}
+                height={624}
+                loading="lazy"
+              />
+            </Link>
+          </article>
+          <details className="study-archive">
+            <summary>
+              <span>
+                Earlier explorations <small>04 studies</small>
+              </span>
+              <Plus size={22} />
+            </summary>
+            <div>
+              {projects.map((project) => (
+                <Link href={`/projects/${project.slug}`} key={project.slug}>
+                  <span className="archive-number">{project.number}</span>
+                  <span>
+                    {project.title}
+                    <small>{project.category}</small>
+                  </span>
+                  <Arrow />
+                </Link>
+              ))}
+            </div>
+          </details>
+        </div>
+      </section>
+      <section id="about" className="about-section shell section-space">
+        <div className="about-profile">
+          <p className="eyebrow">02 / The person behind the work</p>
+          <figure className="portrait">
+            <div className="portrait-frame">
+              <img
+                src="/images/bushra-tabassum.png"
+                alt="Bushra Tabassum"
+                width={1024}
+                height={1536}
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>Bushra Tabassum</span>
+              <span>Architect & Director</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div className="about-content">
+          <span className="section-mark" aria-hidden="true">
+            BT.
+          </span>
+          <h2>
+            A designer’s eye.
+            <br />
+            <em>A director’s perspective.</em>
+          </h2>
+          <div className="about-body">
+            <p>
+              My work brings architectural thinking and business leadership to
+              the same table. From a restaurant interior to a community space,
+              I’m interested in how light, materials and thoughtful planning
+              shape everyday experiences.
+            </p>
+            <p>
+              Practice in Bangladesh and Malaysia has shaped my approach to site
+              analysis, design development and visualisation. In my role as
+              Director at Anondo Housing Society, that perspective extends to
+              team management, sales, marketing and development—connecting
+              creative decisions with the people who bring them to life.
+            </p>
+          </div>
+          <p className="about-interests">
+            <span>Beyond the drawing board</span>Drawing & digital art · Travel
+            · Photography · Reading & writing
+          </p>
+          <div className="about-facts">
+            <div>
+              <span>BArch</span>
+              <p>Taylor’s University</p>
+            </div>
+            <div>
+              <span>MBA</span>
+              <p>University of Cyberjaya</p>
+            </div>
+            <div>
+              <span>BD / MY</span>
+              <p>A cross-border perspective</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="experience" className="experience-section section-space">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">03 / Experience & education</p>
+              <h2>
+                Built on practice.
+                <br />
+                <em>Broadened by perspective.</em>
+              </h2>
+            </div>
+            <p className="section-aside">
+              A journey through architecture,
+              <br />
+              collaboration and leadership.
+            </p>
+          </div>
+          <div className="experience-list">
+            {experience.map((job, index) => (
+              <article className="experience-row" key={job.company}>
+                <span className="row-number">0{index + 1}</span>
+                <p className="job-date">{job.dates}</p>
+                <div>
+                  <h3>{job.role}</h3>
+                  <p className="company">{job.company}</p>
+                </div>
+                <div>
+                  <p className="job-description">{job.description}</p>
+                  <p className="job-location">{job.location}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="education-grid">
+            <p className="eyebrow">Academic foundations</p>
+            <article>
+              <span>Oct 2024 — Jan 2026</span>
+              <h3>Master of Business Administration</h3>
+              <p>University of Cyberjaya</p>
+            </article>
+            <article>
+              <span>2019 — Jan 2024</span>
+              <h3>Bachelor of Architecture</h3>
+              <p>Taylor’s University</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="expertise" className="expertise-section section-space">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">04 / Expertise</p>
+              <h2>
+                Creative thinking.
+                <br />
+                <em>Practical fluency.</em>
+              </h2>
+            </div>
+            <p className="section-aside">
+              The tools and skills behind
+              <br />a considered approach.
+            </p>
+          </div>
+          <div className="skill-groups">
+            {skillGroups.map((group, index) => (
+              <article className="skill-group" key={group.name}>
+                <span className="skill-index">0{index + 1}</span>
+                <div>
+                  <h3>{group.name}</h3>
+                  <p>{group.detail}</p>
+                </div>
+                <div className="skill-tags">
+                  {group.skills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="contact" className="contact-section section-space">
+        <div className="shell">
+          <p className="eyebrow">05 / Start a conversation</p>
+          <div className="contact-heading">
+            <h2>
+              Good spaces start
+              <br />
+              with <em>a conversation.</em>
+            </h2>
+            <a
+              className="contact-orbit"
+              href={`mailto:${contact.email}`}
+              aria-label="Email Bushra Tabassum"
+            >
+              <ArrowUpRight strokeWidth={1} />
+            </a>
+          </div>
+          <div className="contact-bottom">
+            <p>
+              For professional connections, architecture
+              <br />
+              and opportunities to collaborate.
+            </p>
+            <div className="contact-actions">
+              <a className="contact-button" href={`mailto:${contact.email}`}>
+                Send an email <Arrow />
+              </a>
+              <a
+                className="text-link"
+                href={linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn <Arrow />
+              </a>
+            </div>
+          </div>
+          <div className="contact-details">
+            <div>
+              <h3>Email</h3>
+              <a href={`mailto:${contact.email}`}>
+                {contact.email} <Arrow />
+              </a>
+            </div>
+            <div>
+              <h3>Phone</h3>
+              {contact.phones.map((phone, index) => (
+                <div
+                  className={index ? "phone-secondary" : ""}
+                  key={phone.country}
+                >
+                  <a href={phone.href}>{phone.label}</a>
+                  <small>{phone.country}</small>
+                </div>
+              ))}
+            </div>
+            <div>
+              <h3>Office</h3>
+              <address>
+                {contact.address.map((line) => (
+                  <span className="block" key={line}>
+                    {line}
+                  </span>
+                ))}
+              </address>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
