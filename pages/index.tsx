@@ -266,16 +266,18 @@ export default function Home() {
           <div className="experience-list">
             {experience.map((job, index) => (
               <article className="experience-row" key={job.company}>
-                <span className="row-number">0{index + 1}</span>
+                <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
                 <p className="job-date">{job.dates}</p>
-                <div>
+                <div className={!job.description && !job.location ? "job-role--wide" : undefined}>
                   <h3>{job.role}</h3>
                   <p className="company">{job.company}</p>
                 </div>
-                <div>
-                  <p className="job-description">{job.description}</p>
-                  <p className="job-location">{job.location}</p>
-                </div>
+                {(job.description || job.location) && (
+                  <div>
+                    {job.description && <p className="job-description">{job.description}</p>}
+                    {job.location && <p className="job-location">{job.location}</p>}
+                  </div>
+                )}
               </article>
             ))}
           </div>

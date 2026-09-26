@@ -36,6 +36,8 @@ Selected work is ordered Maharaja Restaurant, The Esplanade, and Echoes of the W
 
 Biography and responsibilities incorporate the supplied Canva CV. Contact details come from its page 16 and use functional email and telephone links; LinkedIn remains available. At the user's direction, Anondo Housing Society remains in the homepage introduction, biography, metadata and first Director experience entry. Anondo Cityscapers Ltd is a separate Director experience immediately below it, based in Dhaka, Bangladesh, from January 2024 to Present, supervising sales, marketing and development management and tracking and negotiating the firm's legal and financial growth. Two discrepancies remain pending confirmation: HMS Architects versus MH Architects, and BSc Architecture (July 2023) versus Bachelor of Architecture (January 2024). The previous architecture firm's name and the degree title and dates remain unchanged pending that confirmation.
 
+The user also confirmed current Director roles at Anondo Bhubon, Anondo Rosemont Estate, Anondo Baari, Anondo Universal Services Ltd., Pranto ARDI and Bridge Pharmaceuticals Ltd. These appear after Anondo Cityscapers Ltd, with "Present" and no unprovided start dates, locations or responsibilities.
+
 Development uses `.next-dev` to avoid collisions with production exports. For another simultaneous local preview, set `NEXT_DEV_DIRECTORY` to a separate cache path. The production export remains `out/`.
 
 The site is a static portfolio: there is no CMS, email form or database to configure. All 21 supplied skills are included. Image source information is recorded in `IMAGE-CREDITS.md`.

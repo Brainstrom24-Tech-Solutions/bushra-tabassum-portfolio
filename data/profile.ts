@@ -3,8 +3,16 @@ export const linkedin =
 export const contact = {
   email: "bushratabas.summ11@gmail.com",
   phones: [
-    { country: "Bangladesh", label: "+880 1741 300461", href: "tel:+8801741300461" },
-    { country: "Malaysia", label: "+60 11 1666 7319", href: "tel:+601116667319" },
+    {
+      country: "Bangladesh",
+      label: "+880 1741 300461",
+      href: "tel:+8801741300461",
+    },
+    {
+      country: "Malaysia",
+      label: "+60 11 1666 7319",
+      href: "tel:+601116667319",
+    },
   ],
   address: ["Star Center, Level 2", "Gulshan 1, Dhaka 1212", "Bangladesh"],
 };
@@ -75,7 +83,15 @@ export const projects = [
     focus: ["Site analysis", "Context", "Visual communication"],
   },
 ];
-export const experience = [
+type Experience = {
+  role: string;
+  company: string;
+  dates: string;
+  location?: string;
+  description?: string;
+};
+
+export const experience: Experience[] = [
   {
     role: "Director",
     company: "Anondo Housing Society",
@@ -91,6 +107,54 @@ export const experience = [
     location: "Dhaka, Bangladesh",
     description:
       "Supervising the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
+  },
+  {
+    role: "Director",
+    company: "Anondo Bhubon",
+    dates: "January 2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
+  },
+  {
+    role: "Director",
+    company: "Anondo Rosemont Estate",
+    dates: "January 2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
+  },
+  {
+    role: "Director",
+    company: "Anondo Baari",
+    dates: "January 2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
+  },
+  {
+    role: "Director",
+    company: "Anondo Universal Services Ltd.",
+    dates: "January 2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
+  },
+  {
+    role: "Director",
+    company: "Pranto ARDI",
+    dates: "January 2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
+  },
+  {
+    role: "Director",
+    company: "Bridge Pharmaceuticals Ltd.",
+    dates: "January 2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
   },
   {
     role: "Assistant Architect",

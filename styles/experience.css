@@ -1,0 +1,11 @@
+.experience-row > .job-role--wide {
+  grid-column: 3 / -1;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .experience-row > .job-role--wide {
+    grid-column: 2 / -1;
+    margin-top: 0;
+  }
+}

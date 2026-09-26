@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import SmoothScroll from "../components/SmoothScroll";
 import "lenis/dist/lenis.css";
 import "../styles/globals.css";
+import "../styles/experience.css";
 import "../styles/portrait.css";
 import "../styles/scroll.css";
 import "../styles/gallery.css";
