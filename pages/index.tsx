@@ -239,7 +239,7 @@ export default function Home() {
               <span>
                 MBA{" "}
                 <small className="inline-block whitespace-nowrap align-middle text-[0.55em] tracking-normal">
-                  (Deans Listed)
+                  (Dean’s Listed)
                 </small>
               </span>
               <p>University of Cyberjaya</p>

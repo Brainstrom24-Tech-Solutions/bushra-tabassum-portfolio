@@ -167,7 +167,7 @@ export const experience: Experience[] = [
   {
     role: "Architectural Intern",
     company: "Arkitekno Vista sdn bhd",
-    dates: "Jan — Mar 2023",
+    dates: "Jan 2023 — Mar 2023",
     location: "Shah Alam, Malaysia · On-site",
     description:
       "Site visits, data collection, detailed drawings, construction documents, sample designs and support with 3D models and renderings.",
