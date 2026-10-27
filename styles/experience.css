@@ -1,9 +1,62 @@
+.experience-row {
+  grid-template-columns: 36px .8fr 1.2fr 1.4fr;
+  padding-block: 36px;
+}
+
+.experience-row > .row-number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(154, 89, 60, .4);
+  border-radius: 50%;
+  color: #8c5036;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-row > .job-date {
+  padding-top: 7px;
+  color: #4b5148;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-row .company {
+  font-weight: 500;
+}
+
+.education-grid article > span {
+  color: #4b5148;
+  font-weight: 600;
+}
+
 .experience-row > .job-role--wide {
   grid-column: 3 / -1;
   min-width: 0;
 }
 
+@media (max-width: 1100px) {
+  .experience-row {
+    grid-template-columns: 36px .7fr 1fr 1.3fr;
+  }
+}
+
 @media (max-width: 760px) {
+  .experience-row {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 16px;
+    padding-block: 28px;
+  }
+
+  .experience-row > .job-date {
+    align-self: center;
+    padding-top: 0;
+  }
+
   .experience-row > .job-role--wide {
     grid-column: 2 / -1;
     margin-top: 0;

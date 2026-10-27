@@ -93,41 +93,41 @@ type Experience = {
 
 export const experience: Experience[] = [
   {
-    role: "Director",
+    role: "General Manager",
     company: "Anondo Housing Society",
-    dates: "Jan 2024 — Present",
+    dates: "Aug 2023 — Present",
     location: "Dhaka, Bangladesh · Hybrid",
     description:
       "Oversight of sales, marketing and development teams, alongside project coordination, on-site supervision and client communication.",
   },
   {
-    role: "Director",
+    role: "General Manager",
     company: "Anondo Cityscapers Ltd",
-    dates: "January 2024 — Present",
+    dates: "Aug 2023 — Present",
     location: "Dhaka, Bangladesh",
     description:
       "Supervising the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
   },
   {
-    role: "Director",
+    role: "Project Coordinator",
     company: "Anondo Bhubon",
-    dates: "January 2024 — Present",
+    dates: "Aug 2023 — Present",
     location: "Dhaka, Bangladesh",
     description:
       "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
   },
   {
-    role: "Director",
+    role: "Project Coordinator",
     company: "Anondo Rosemont Estate",
-    dates: "January 2024 — Present",
+    dates: "Aug 2023 — Present",
     location: "Dhaka, Bangladesh",
     description:
       "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
   },
   {
-    role: "Director",
+    role: "Project Coordinator",
     company: "Anondo Baari",
-    dates: "January 2024 — Present",
+    dates: "Aug 2023 — Present",
     location: "Dhaka, Bangladesh",
     description:
       "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
@@ -135,13 +135,13 @@ export const experience: Experience[] = [
   {
     role: "Director",
     company: "Anondo Universal Services Ltd.",
-    dates: "January 2024 — Present",
+    dates: "Aug 2023 — Present",
     location: "Dhaka, Bangladesh",
     description:
       "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",
   },
   {
-    role: "Director",
+    role: "Project Coordinator",
     company: "Pranto ARDI",
     dates: "January 2024 — Present",
     location: "Dhaka, Bangladesh",
@@ -151,7 +151,7 @@ export const experience: Experience[] = [
   {
     role: "Director",
     company: "Bridge Pharmaceuticals Ltd.",
-    dates: "January 2024 — Present",
+    dates: "January 2022 — Present",
     location: "Dhaka, Bangladesh",
     description:
       "Overseeing the management of the sales, marketing and development department. Tracking and negotiating the legal and financial growth of the firm.",

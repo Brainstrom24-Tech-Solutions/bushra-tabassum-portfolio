@@ -236,7 +236,12 @@ export default function Home() {
               <p>Taylor’s University</p>
             </div>
             <div>
-              <span>MBA</span>
+              <span>
+                MBA{" "}
+                <small className="inline-block whitespace-nowrap align-middle text-[0.55em] tracking-normal">
+                  (Deans Listed)
+                </small>
+              </span>
               <p>University of Cyberjaya</p>
             </div>
             <div>
