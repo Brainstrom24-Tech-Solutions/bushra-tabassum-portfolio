@@ -25,6 +25,7 @@ Open http://localhost:3000. For a production static export, run `npm run build`;
 - `styles/globals.css`: visual design and responsive styles; Tailwind utilities are also enabled.
 - `styles/portrait.css`: responsive About-section portrait framing.
 - `components/SmoothScroll.tsx`: Lenis scrolling, section links, route synchronisation and cleanup. Reduced-motion preferences are respected; touch scrolling stays native.
+- `components/HeroVideo.tsx`, `styles/hero-video.css` and `public/videos/maharaja-walkthrough.mp4`: the user-supplied, already-cropped MP4 plays directly through the native video element, muted, inline and looping. The 19,621,216-byte, 1622×968 file is copied unchanged, without re-encoding or extra zoom. Its responsive frame keeps the source aspect ratio and uses `object-fit: contain` so no edges are cropped. On mobile, the project caption sits beneath the video. Playback has no visible controls; reduced-motion support, visibility-aware playback and the original image fallback are included. No YouTube player, scripts or overlays are used.
 - `public/images/bushra-tabassum.png`: the original portrait supplied by the user.
 - `public/images/projects/`: original Canva project artwork and crops rendered from Wix portfolio PDFs, with lightweight gallery thumbnails.
 - `public/documents/`: compact, rasterised web editions of the two original presentation PDFs; all pages and visual team credits are retained.

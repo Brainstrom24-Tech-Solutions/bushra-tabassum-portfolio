@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Plus } from "lucide-react";
 import Layout, { Arrow } from "../components/Layout";
+import HeroVideo from "../components/HeroVideo";
 import {
   contact,
   experience,
@@ -38,33 +39,31 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <Link
-          href={`/projects/${heroProject.slug}`}
-          className="hero-project"
-          aria-label={`Explore ${heroProject.title}`}
-        >
-          <img
-            src={heroProject.image}
-            alt={heroProject.alt}
-            fetchPriority="high"
-            width={2399}
-            height={1425}
-          />
-          <div className="hero-project-shade" />
-          <div className="hero-project-caption">
-            <span className="eyebrow">
-              Featured project / Hospitality interiors
-            </span>
-            <h2>{heroProject.title}</h2>
-            <p>Warmth, texture & a place at the table.</p>
+        <div className="hero-project">
+          <div className="hero-video-frame">
+            <HeroVideo poster={heroProject.image} alt={heroProject.alt} />
           </div>
-          <span className="circle-arrow">
-            <ArrowUpRight size={30} strokeWidth={1} />
-          </span>
-          <span className="hero-project-type">
-            Genting Highlands · 2,200 sq ft
-          </span>
-        </Link>
+          <Link
+            href={`/projects/${heroProject.slug}`}
+            className="hero-project-link"
+            aria-label={`Explore ${heroProject.title}`}
+          >
+            <div className="hero-project-shade" />
+            <div className="hero-project-caption">
+              <span className="eyebrow">
+                Featured project / Hospitality interiors
+              </span>
+              <h2>{heroProject.title}</h2>
+              <p>Warmth, texture & a place at the table.</p>
+            </div>
+            <span className="circle-arrow">
+              <ArrowUpRight size={30} strokeWidth={1} />
+            </span>
+            <span className="hero-project-type">
+              Genting Highlands · 2,200 sq ft
+            </span>
+          </Link>
+        </div>
         <div className="hero-bottom">
           <span>People. Place. Possibility.</span>
           <a href="#about">

@@ -1,5 +1,9 @@
 # Architectural reference imagery
 
+## Hero walkthrough
+
+`public/videos/maharaja-walkthrough.mp4` is an unchanged copy of the user's supplied `Project1 Alt Walkthrough 2.mp4` (19,621,216 bytes, 1622×968, 18 fps, approximately 16.44 seconds). The user confirmed that this file was already cropped. It replaces the earlier YouTube embed and plays as a muted, looping native video, with no additional re-encoding or artificial zoom. The existing Maharaja render remains the fallback image.
+
 ## Canva portfolio additions
 
 Source: [the user-supplied Canva portfolio](https://www.canva.com/design/DAGb5vEQFPY/zhZQHgoJOXaEljDy3mVMog/edit).

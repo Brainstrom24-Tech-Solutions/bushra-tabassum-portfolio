@@ -1,0 +1,90 @@
+.hero-project {
+  aspect-ratio: auto;
+  height: auto;
+}
+
+.hero-video-frame {
+  position: relative;
+  aspect-ratio: 1622 / 968;
+  overflow: hidden;
+}
+
+.hero-video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.hero-video-viewport {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .65s ease;
+}
+
+.hero-video-viewport.is-playing {
+  opacity: 1;
+}
+
+.hero-project-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-project-link:focus-visible {
+  outline: 2px solid white;
+  outline-offset: -6px;
+}
+
+@media (max-width: 760px) {
+  .hero-project-link {
+    position: relative;
+    display: block;
+    padding: 24px 22px;
+    background: #222622;
+  }
+
+  .hero-project-shade {
+    display: none;
+  }
+
+  .hero-project-caption {
+    position: static;
+    padding-right: 36px;
+  }
+
+  .hero-project-caption h2 {
+    font-size: 30px;
+  }
+
+  .hero-project-type {
+    position: static;
+    display: inline-block;
+    margin-top: 18px;
+    padding: 0;
+    color: #c9cbbf;
+    background: none;
+    backdrop-filter: none;
+  }
+
+  .hero-project .circle-arrow {
+    top: 55px;
+    bottom: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-viewport {
+    transition: none;
+  }
+}
