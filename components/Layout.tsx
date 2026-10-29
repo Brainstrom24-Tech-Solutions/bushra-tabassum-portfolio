@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Head from "next/head";
+import Seo from "./Seo";
+import type { ProjectSchema } from "../lib/seo";
 import { useRouter } from "next/router";
 import { ArrowUpRight, ArrowUp, Menu, X } from "lucide-react";
 import { linkedin } from "../data/profile";
@@ -22,12 +23,18 @@ const navigation = [
 ];
 export default function Layout({
   children,
-  title = "Bushra Tabassum — Architect & Director",
-  description = "Architecture, design and leadership. Selected projects and the professional journey of Bushra Tabassum, Director at Anondo Housing Society.",
+  title,
+  description,
+  seoPath = "/",
+  noindex = false,
+  projectSchema,
 }: {
   children: React.ReactNode;
   title?: string;
   description?: string;
+  seoPath?: string;
+  noindex?: boolean;
+  projectSchema?: ProjectSchema;
 }) {
   const [menu, setMenu] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -48,13 +55,7 @@ export default function Layout({
   }, [menu]);
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-      </Head>
+      <Seo path={seoPath} title={title} description={description} noindex={noindex} projectSchema={projectSchema} />
       <a className="skip-link" href="#main">
         Skip to content
       </a>

@@ -1,0 +1,62 @@
+{
+  "siteUrl": "https://bushra-tabassum-portfolio.vercel.app",
+  "siteName": "Bushra Tabassum",
+  "home": {
+    "title": "Bushra Tabassum | Architect & Director | Design Portfolio",
+    "description": "Explore Bushra Tabassum's architecture and interior design portfolio, with hospitality, community and academic work, and practice across Bangladesh and Malaysia."
+  },
+  "projects": {
+    "maharaja-restaurant": {
+      "featured": true,
+      "name": "Maharaja Restaurant",
+      "title": "Maharaja Restaurant Interior Design | Bushra Tabassum",
+      "description": "Explore the 2,200 sq ft Maharaja Restaurant interior design in Genting Highlands, Malaysia, with warm brick, timber, lighting and thoughtful dining space planning.",
+      "category": "Hospitality interior design"
+    },
+    "the-esplanade": {
+      "featured": true,
+      "name": "The Esplanade",
+      "title": "The Esplanade Community Centre Design | Bushra Tabassum",
+      "description": "Discover The Esplanade, an academic cultural community centre proposal beside the Malacca River, exploring kuih heritage, workshops and public space.",
+      "category": "Cultural and community architecture"
+    },
+    "echoes-of-the-wind": {
+      "featured": true,
+      "name": "Echoes of the Wind",
+      "title": "Echoes of the Wind Sensory Pavilion | Bushra Tabassum",
+      "description": "Explore Echoes of the Wind, a collaborative academic pavilion design using sound, bamboo and tactile experiences to create inclusive architectural space.",
+      "category": "Inclusive and sensory design"
+    },
+    "wat-air-purifier": {
+      "featured": true,
+      "name": "WAT-AIR Purifier",
+      "title": "WAT-AIR Purifier Sustainable Design Concept | Bushra Tabassum",
+      "description": "Explore WAT-AIR Purifier, a speculative academic concept examining air filtration, rainwater collection and environmental infrastructure in Metro Manila.",
+      "category": "Sustainable design concept"
+    },
+    "principles-and-materiality": {
+      "name": "Principles & Materiality",
+      "title": "Architectural Principles & Materiality | Bushra Tabassum",
+      "description": "An academic exploration at Taylor's University examining architectural principles, diagramming, composition and materiality.",
+      "category": "Academic architecture study"
+    },
+    "design-strategy": {
+      "name": "From Strategy to Space",
+      "title": "Architectural Design Strategy | Bushra Tabassum",
+      "description": "An academic study of architectural design strategy, spatial composition and the translation of early concepts into final design outcomes.",
+      "category": "Academic architecture study"
+    },
+    "precedent-studies": {
+      "name": "Reading the Built Form",
+      "title": "Architecture Precedent Studies | Bushra Tabassum",
+      "description": "Explore an academic architectural research study focused on precedent analysis, built form and translating architectural references into spatial ideas.",
+      "category": "Architectural research"
+    },
+    "site-analysis": {
+      "name": "A Sense of Place",
+      "title": "Architecture Site Analysis Study | Bushra Tabassum",
+      "description": "An academic site analysis study exploring architectural context, place and visual communication at Taylor's University.",
+      "category": "Architectural site analysis"
+    }
+  }
+}

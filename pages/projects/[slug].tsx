@@ -20,8 +20,7 @@ function ArchiveProjectPage({
 }) {
   return (
     <Layout
-      title={`${project.title} — Bushra Tabassum`}
-      description={project.description}
+      seoPath={`/projects/${project.slug}/`}
     >
       <article className="project-detail shell">
         <Link href="/#work" className="text-link">

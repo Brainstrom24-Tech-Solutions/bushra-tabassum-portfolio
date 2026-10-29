@@ -13,6 +13,19 @@ npm run dev
 
 Open http://localhost:3000. For a production static export, run `npm run build`; deploy the generated `out/` directory to a static host. Because this uses `output: 'export'`, serve `out/` with a static file server rather than `next start`.
 
+## Search and social previews
+
+SEO remains on the **Pages Router**, using `next/head` through `components/Seo.tsx`. `data/seo.json` contains the production origin, unique homepage/project titles and descriptions, and selected-project flags. The canonical origin is currently `https://bushra-tabassum-portfolio.vercel.app`; update `siteUrl` in that one file before switching domains. Page canonicals, Open Graph URLs, JSON-LD and sitemap URLs use trailing slashes to match `next.config.mjs`. Social-image file URLs retain their `.png` extension.
+
+- Each of the nine content pages has a canonical, description, Open Graph metadata, Twitter large-image card and JSON-LD.
+- Homepage schema includes Person, WebSite, WebPage and the four selected projects. Project pages include CreativeWork and BreadcrumbList, preserving credits from `data/featured.ts`. Archive reference photographs are excluded from original-work schema. Unresolved employment titles and degree dates are not added as structured claims.
+- The custom 404 is `noindex, follow`, with no canonical or portfolio schema. All eight existing project pages remain indexable; the removed Kepong project is excluded.
+- `scripts/generate-seo.mjs` generates `public/sitemap.xml`, `public/robots.txt` and nine 1200×630 PNG previews in `public/images/og/`. It runs before development and production builds; `npm run seo:generate` runs it manually. Rendering is offline using the installed Next.js image renderer and bundled font. No server image endpoint or new package is required.
+- `npm run build` automatically validates the static export afterward. `npm run seo:check` checks an existing `out/` export: metadata values/duplicates, canonical URLs, JSON-LD syntax and required types, PNG dimensions, sitemap coverage, robots directives, 404 handling, and project-route drift. Missing or extra project routes fail the check. Add new project SEO data together with its content.
+- After deployment, `npm run seo:check -- --base-url https://bushra-tabassum-portfolio.vercel.app` also checks served HTML/assets and removed-project status. It requires a current local export and does not deploy anything.
+
+The automated checks are not a Google index-coverage or Rich Results Test. After deploying, verify the final canonical domain in Google Search Console, submit `/sitemap.xml`, and inspect the homepage and main project URLs. If a custom domain is introduced, redirect the old domain consistently. The supplied kit's App Router files were adapted; no `app/` router or duplicate metadata system was added. The existing design, project content and native looping video are retained.
+
 ## Update content
 
 - `data/profile.ts`: earlier studies, experience, skills and contact details.

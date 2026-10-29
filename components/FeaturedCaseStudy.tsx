@@ -14,8 +14,8 @@ export default function FeaturedCaseStudy({
   const isConcept = project.slug === "wat-air-purifier";
   return (
     <Layout
-      title={`${project.title} — Bushra Tabassum`}
-      description={project.description}
+      seoPath={`/projects/${project.slug}/`}
+      projectSchema={project}
     >
       <article
         className={`project-detail shell ${isConcept ? "concept-detail" : ""}`}

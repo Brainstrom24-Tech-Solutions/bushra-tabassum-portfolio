@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/generate-seo.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/generate-seo.mjs",
     "build": "next build",
+    "postbuild": "node scripts/verify-seo.mjs",
+    "seo:generate": "node scripts/generate-seo.mjs",
+    "seo:check": "node scripts/verify-seo.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
