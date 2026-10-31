@@ -35,6 +35,7 @@ The automated checks are not a Google index-coverage or Rich Results Test. After
 - `components/ProjectGallery.tsx`: category filters and a keyboard-accessible image viewer with zoom, previous/next and focus restoration.
 - `styles/gallery.css`: gallery, image viewer, concept feature and contact layouts.
 - `pages/index.tsx`: homepage introduction, education and contact text.
+- `components/Photography.tsx`, `data/photography.ts` and `styles/photography.css`: the homepage "Through my lens" section with the user-supplied Qutub Minar (2021) and Blue Mosque (2024) photographs. Original PNGs are preserved under `public/images/photography/`; the gallery uses a responsive portrait layout and keyboard-accessible full-frame viewer.
 - `styles/globals.css`: visual design and responsive styles; Tailwind utilities are also enabled.
 - `styles/portrait.css`: responsive About-section portrait framing.
 - `components/SmoothScroll.tsx`: Lenis scrolling, section links, route synchronisation and cleanup. Reduced-motion preferences are respected; touch scrolling stays native.

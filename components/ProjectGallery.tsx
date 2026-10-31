@@ -5,10 +5,13 @@ import type { GalleryImage } from "../data/featured";
 export default function ProjectGallery({
   images,
   title,
+  variant = "project",
 }: {
   images: GalleryImage[];
   title: string;
+  variant?: "project" | "photography";
 }) {
+  const isPhotography = variant === "photography";
   const [filter, setFilter] = useState("All");
   const [active, setActive] = useState<number | null>(null);
   const [zoom, setZoom] = useState(1);
@@ -22,9 +25,9 @@ export default function ProjectGallery({
     "All",
     ...Array.from(new Set(images.map((image) => image.category))),
   ];
-  const visible = images.filter(
-    (image) => filter === "All" || image.category === filter,
-  );
+  const visible = isPhotography
+    ? images
+    : images.filter((image) => filter === "All" || image.category === filter);
   const current = active === null ? null : images[active];
 
   useEffect(() => {
@@ -47,7 +50,7 @@ export default function ProjectGallery({
       stage.current.scrollTop = 0;
       stage.current.scrollLeft = 0;
     }
-  }, [active]);
+  }, [active, variant]);
 
   useEffect(() => {
     const viewport = stage.current;
@@ -71,7 +74,7 @@ export default function ProjectGallery({
 
   return (
     <>
-      {images.length > 1 && (
+      {!isPhotography && images.length > 1 && (
         <div className="gallery-toolbar">
           <div className="gallery-filters" aria-label="Filter project images">
             {categories.map((category) => (
@@ -90,13 +93,13 @@ export default function ProjectGallery({
           </p>
         </div>
       )}
-      <div className="project-gallery">
+      <div className={`project-gallery${isPhotography ? " photography-gallery" : ""}`}>
         {visible.map((item) => (
           <figure key={item.image}>
             <button
               type="button"
               className={`gallery-image ${item.category === "Interiors" ? "gallery-photo" : ""}`}
-              aria-label={`Enlarge ${item.caption}`}
+              aria-label={`Enlarge ${item.caption}${isPhotography ? `, ${item.category}` : ""}`}
               onClick={(event) => {
                 opener.current = event.currentTarget;
                 setActive(images.indexOf(item));
@@ -110,7 +113,7 @@ export default function ProjectGallery({
                 loading="lazy"
               />
               <span className="gallery-enlarge">
-                <Maximize2 size={17} /> View detail
+                <Maximize2 size={17} /> {isPhotography ? "View photograph" : "View detail"}
               </span>
             </button>
             <figcaption>
@@ -125,7 +128,7 @@ export default function ProjectGallery({
       </div>
       <dialog
         ref={dialog}
-        className="gallery-dialog"
+        className={`gallery-dialog${isPhotography ? " photography-dialog" : ""}`}
         aria-label={`${title} image viewer`}
         data-lenis-prevent
         onCancel={() => setActive(null)}
@@ -144,32 +147,34 @@ export default function ProjectGallery({
           <div className="lightbox-layout">
             <div className="lightbox-header">
               <span>{title}</span>
-              <div className="lightbox-zoom">
-                <button
-                  type="button"
-                  aria-label="Zoom out"
-                  disabled={zoom <= 1}
-                  onClick={() => setZoom((value) => Math.max(1, value - 0.5))}
-                >
-                  <Minus size={18} />
-                </button>
-                <button
-                  type="button"
-                  className="zoom-reset"
-                  onClick={() => setZoom(1)}
-                  aria-label="Reset zoom"
-                >
-                  {Math.round(zoom * 100)}%
-                </button>
-                <button
-                  type="button"
-                  aria-label="Zoom in"
-                  disabled={zoom >= 3}
-                  onClick={() => setZoom((value) => Math.min(3, value + 0.5))}
-                >
-                  <Plus size={18} />
-                </button>
-              </div>
+              {!isPhotography && (
+                <div className="lightbox-zoom">
+                  <button
+                    type="button"
+                    aria-label="Zoom out"
+                    disabled={zoom <= 1}
+                    onClick={() => setZoom((value) => Math.max(1, value - 0.5))}
+                  >
+                    <Minus size={18} />
+                  </button>
+                  <button
+                    type="button"
+                    className="zoom-reset"
+                    onClick={() => setZoom(1)}
+                    aria-label="Reset zoom"
+                  >
+                    {Math.round(zoom * 100)}%
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Zoom in"
+                    disabled={zoom >= 3}
+                    onClick={() => setZoom((value) => Math.min(3, value + 0.5))}
+                  >
+                    <Plus size={18} />
+                  </button>
+                </div>
+              )}
               <button
                 ref={closeButton}
                 type="button"
@@ -184,7 +189,7 @@ export default function ProjectGallery({
               ref={stage}
               className={`lightbox-stage ${zoom > 1 ? "is-zoomed" : ""}`}
               tabIndex={0}
-              aria-label="Image detail; scroll to explore when zoomed"
+              aria-label={isPhotography ? "Photograph" : "Image detail; scroll to explore when zoomed"}
               data-lenis-prevent
             >
               <div
@@ -201,12 +206,14 @@ export default function ProjectGallery({
             </div>
             <div className="lightbox-footer">
               <div aria-live="polite">
-                <p>{current.caption}</p>
+                <p>{current.caption}{isPhotography ? `, ${current.category}` : ""}</p>
                 <small>
                   {(active ?? 0) + 1} / {images.length} ·{" "}
-                  {zoom > 1
-                    ? "Scroll to explore the drawing"
-                    : "Use + to zoom into details"}
+                  {isPhotography
+                    ? "Use arrow keys to explore"
+                    : zoom > 1
+                      ? "Scroll to explore the drawing"
+                      : "Use + to zoom into details"}
                 </small>
               </div>
               {images.length > 1 && (

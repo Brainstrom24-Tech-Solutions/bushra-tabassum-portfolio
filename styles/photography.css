@@ -1,0 +1,125 @@
+.photography-section {
+  background: #eeece5;
+  border-block: 1px solid var(--line);
+}
+
+.photography-section .eyebrow {
+  color: var(--bronze);
+}
+
+.photography-gallery {
+  grid-template-columns: minmax(0, 426px) minmax(0, 422px);
+  justify-content: center;
+  align-items: start;
+  gap: clamp(32px, 7vw, 100px);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.photography-gallery figure:nth-child(2) {
+  margin-top: 88px;
+}
+
+.photography-gallery .gallery-image {
+  aspect-ratio: auto;
+  padding: 12px;
+  border: 1px solid #d6d3ca;
+  background: #f9f8f4;
+  box-shadow: 0 16px 36px #2224200a;
+  transition: border-color .25s, box-shadow .25s;
+}
+
+.photography-gallery .gallery-image img {
+  height: auto;
+  object-fit: contain;
+  transform: none;
+}
+
+.photography-gallery .gallery-image:hover {
+  border-color: #a39b8f;
+  box-shadow: 0 20px 44px #22242014;
+}
+
+.photography-gallery .gallery-enlarge {
+  right: 24px;
+  bottom: 24px;
+  background: #f5f3eeed;
+  padding: 11px 14px;
+}
+
+.photography-gallery figcaption {
+  align-items: center;
+  margin-top: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cfcbc1;
+}
+
+.photography-gallery figcaption > span {
+  padding-top: 0;
+}
+
+.photography-gallery figcaption > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.4vw, 32px);
+  letter-spacing: -.7px;
+}
+
+.photography-gallery figcaption small {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.8px;
+}
+
+.photography-note {
+  margin-top: 48px;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--muted);
+}
+
+.photography-dialog .lightbox-canvas img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .photography-gallery {
+    grid-template-columns: minmax(0, 426px);
+    gap: 42px;
+  }
+
+  .photography-gallery figure:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .photography-gallery figcaption {
+    margin-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .photography-gallery figcaption > div {
+    font-size: 27px;
+  }
+
+  .photography-note {
+    margin-top: 32px;
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photography-gallery .gallery-image {
+    transition: none;
+  }
+}

@@ -1,5 +1,14 @@
 # Architectural reference imagery
 
+## Through my lens — supplied photographs
+
+The user supplied two black-and-white photographs for the portfolio, labelled **Qutub Minar, 2021** and **Blue Mosque, 2024**. They appear in the homepage Photography section, after About, with full-frame viewing and their supplied dates. These are photography entries, not architectural design commissions.
+
+- `public/images/photography/qutub-minar-2021.png`: unchanged copy of the supplied PNG ending in `(2).png`, 426 × 609 px.
+- `public/images/photography/blue-mosque-2024.png`: unchanged copy of the supplied PNG ending in `(3).png`, 422 × 609 px.
+
+The original image content, monochrome treatment and aspect ratios are preserved. No crops, generative edits or upscaled replacements are used.
+
 ## Hero walkthrough
 
 `public/videos/maharaja-walkthrough.mp4` is an unchanged copy of the user's supplied `Project1 Alt Walkthrough 2.mp4` (19,621,216 bytes, 1622×968, 18 fps, approximately 16.44 seconds). The user confirmed that this file was already cropped. It replaces the earlier YouTube embed and plays as a muted, looping native video, with no additional re-encoding or artificial zoom. The existing Maharaja render remains the fallback image.

@@ -7,6 +7,7 @@ import "../styles/portrait.css";
 import "../styles/scroll.css";
 import "../styles/gallery.css";
 import "../styles/hero-video.css";
+import "../styles/photography.css";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>

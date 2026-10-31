@@ -18,6 +18,7 @@ export function Arrow({ className = "" }: { className?: string }) {
 const navigation = [
   ["Work", "work"],
   ["About", "about"],
+  ["Photography", "photography"],
   ["Experience", "experience"],
   ["Expertise", "expertise"],
 ];

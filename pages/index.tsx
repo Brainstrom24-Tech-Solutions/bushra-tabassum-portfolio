@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Plus } from "lucide-react";
 import Layout, { Arrow } from "../components/Layout";
 import HeroVideo from "../components/HeroVideo";
+import Photography from "../components/Photography";
 import {
   contact,
   experience,
@@ -250,11 +251,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Photography />
       <section id="experience" className="experience-section section-space">
         <div className="shell">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">03 / Experience & education</p>
+              <p className="eyebrow">04 / Experience & education</p>
               <h2>
                 Built on practice.
                 <br />
@@ -304,7 +306,7 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">04 / Expertise</p>
+              <p className="eyebrow">05 / Expertise</p>
               <h2>
                 Creative thinking.
                 <br />
@@ -336,7 +338,7 @@ export default function Home() {
       </section>
       <section id="contact" className="contact-section section-space">
         <div className="shell">
-          <p className="eyebrow">05 / Start a conversation</p>
+          <p className="eyebrow">06 / Start a conversation</p>
           <div className="contact-heading">
             <h2>
               Good spaces start
