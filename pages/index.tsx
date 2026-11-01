@@ -31,7 +31,7 @@ export default function Home() {
             <p>
               I’m Bushra Tabassum.
               <br />
-              Architect & Director at
+              Architect & Coordinator at
               <br />
               Anondo Housing Society.
             </p>
