@@ -93,7 +93,7 @@ type Experience = {
 
 export const experience: Experience[] = [
   {
-    role: "General Manager",
+    role: "Coordinator",
     company: "Anondo Housing Society",
     dates: "Aug 2023 — Present",
     location: "Dhaka, Bangladesh · Hybrid",
